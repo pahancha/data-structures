@@ -5,14 +5,14 @@ public class Stack {
 
     private int count;
 
-    public void push(int item){
+    public void push(int item) {
         if (count == items.length){
             throw new StackOverflowError();
         }
         items[count++] = item;
     }
 
-    public int pop(){
+    public int pop() {
         if (count == 0){
             throw new IllegalArgumentException();
         }
