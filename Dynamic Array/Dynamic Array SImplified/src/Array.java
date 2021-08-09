@@ -4,17 +4,17 @@ public class Array {
     private int[] items;
     private int count;
 
-    public Array(int length){
+    public Array(int length) {
         items = new int[length];
     }
 
-    public void print(){
-        for (int i = 0; i < count; i++){
+    public void print() {
+        for (int i = 0; i < count; i++) {
             System.out.print(items[i] + " ");
         }
     }
 
-    public void insert(int item){
+    public void insert(int item) {
         //If the array is full, resize it
         if (items.length == count){
             //create new Array (twice the size)
@@ -31,22 +31,22 @@ public class Array {
         count ++;
     }
 
-    public void removeAt(int index){
+    public void removeAt(int index) {
         //validate the index. make sure the index is in the right range
         if (index < 0 || index >= count){
             throw new IllegalArgumentException();
         }
         //Shift the items to the left to fill the array
-        for (int i = index; i < count; i++){
+        for (int i = index; i < count; i++) {
             items[i] = items[i + 1];
         }
         count--;
     }
 
-    public int indexOf(int item){
+    public int indexOf(int item) {
         //If finds the items, return the index
-        for (int i = 0; i < count; i++){
-            if (items[i] == item){
+        for (int i = 0; i < count; i++) {
+            if (items[i] == item) {
                 return i;
             }
         }
@@ -55,10 +55,10 @@ public class Array {
     }
 
     //Method to find the largest element of an array
-    public int max(){
+    public int max() {
         int max = items[0];
-        for (int i = 1; i < items.length; i++){
-            if (items[i] > max){
+        for (int i = 1; i < items.length; i++) {
+            if (items[i] > max) {
                 max = items[i];
             }
         }
@@ -66,7 +66,7 @@ public class Array {
     }
 
     //Returning the common items of this array and another array.
-    public void intersect(int [] nums){
+    public void intersect(int [] nums) {
         int commonCount = 0;
         for (int item : items) {
             for (int num : nums) {
@@ -81,9 +81,9 @@ public class Array {
 
 
     //Reversing the array
-    public int[] reverse(){
+    public int[] reverse() {
 
-        for (int i = 0; i < items.length/2; i++){
+        for (int i = 0; i < items.length/2; i++) {
             int temp = items[i];
             items[i] = items[items.length - i - 1];
             items[items.length - i - 1] = temp;
@@ -92,7 +92,7 @@ public class Array {
     }
 
     //Method to add an element in a given index of an array.
-    public int[] insertAt(int item, int index){
+    public int[] insertAt(int item, int index) {
         if (index < 0 || index > count ){
             throw new IllegalArgumentException();
         }
@@ -100,10 +100,10 @@ public class Array {
         //creating a new Array with an additional space for the new element
         int [] newItems = new int[count + 1];
 
-        for (int i = 0; i < newItems.length; i++){
-            if (i < index){
+        for (int i = 0; i < newItems.length; i++) {
+            if (i < index) {
                 newItems[i] = items[i];
-            }else if (i == index){
+            }else if (i == index) {
                 newItems[i] = item;
             }else{
             newItems[i] = items[i - 1];
